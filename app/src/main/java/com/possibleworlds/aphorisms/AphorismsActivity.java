@@ -22,8 +22,9 @@ public class AphorismsActivity extends ActionBarActivity {
         setContentView(R.layout.activity_aphorisms);    // Use activity_fun_facts xml layout for the content view
 
         // Declare our View variables and assign the Views from the layout file
-        final TextView factLabel = (TextView) findViewById(R.id.aphorismTextView);  // Attach to view by id
-        final Button showFactButton = (Button) findViewById(R.id.showAphorismButton);
+        final TextView aphorismLabel = (TextView) findViewById(R.id.aphorismTextView);  // Attach to view by id
+        final TextView aphorismNumber = (TextView) findViewById(R.id.aphorismNumber);
+        final Button showAphorismButton = (Button) findViewById(R.id.showAphorismButton);
         final RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
 
         //Create OnClickListener
@@ -32,14 +33,18 @@ public class AphorismsActivity extends ActionBarActivity {
             public void onClick(View view) {    // When button is tapped...
                 int color = mColorWheel.getColor();
                 relativeLayout.setBackgroundColor(color);
-                showFactButton.setTextColor(color);
-                String fact = mFactBook.getAphorism();
-                factLabel.setText(fact);
+                showAphorismButton.setTextColor(color);
+                String aphorism = mFactBook.getAphorism();
+                aphorismLabel.setText(aphorism);
+                int number = mFactBook.getAphorismNumber();
+                int total = mFactBook.getAphorismTotal();
+                String aNumber = number + "/" + total;
+                aphorismNumber.setText(aNumber);
             }
         };
-        showFactButton.setOnClickListener(listener);    // Attach onclock listener to button
+        showAphorismButton.setOnClickListener(listener);    // Attach onclock listener to button
 
         //Toast.makeText(this, "Yay! Our Activity was created!", Toast.LENGTH_LONG).show();
-        Log.d(TAG, "We're logging from the onCreate() method!");
+        //Log.d(TAG, "We're logging from the onCreate() method!");
     }
 }

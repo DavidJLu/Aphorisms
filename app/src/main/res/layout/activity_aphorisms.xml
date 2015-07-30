@@ -43,4 +43,13 @@
         android:background="@android:color/white"
         android:textColor="#ff51b46d" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/aphorismNumber"
+        android:textColor="#80ffffff"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>
